@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import FormData from 'form-data';
+import { FormData } from 'formdata-node';
 import { RagFlowClientConfig, RagFlowResponse } from './types';
 import * as path from 'path';
 
@@ -90,7 +90,6 @@ export class HttpClient {
   public async postForm<T>(url: string, formData: FormData): Promise<T> {
     const response = await axios.post(`${this.baseUrl}${url}`, formData, {
       headers: {
-        ...formData.getHeaders(),
         'Authorization': `Bearer ${this.apiKey}`
       },
       timeout: this.timeout
@@ -161,8 +160,7 @@ export function handleResponse<T>(response: AxiosResponse): T {
 
 /**
  * 创建用于上传文件的FormData
- * 此功能仅在测试环境中可用，SDK库本身不直接依赖于fs
- * 若要在实际应用中使用，请在测试代码中引入fs
+ * 支持浏览器和Node.js环境
  */
 export function createFormData(files: string[] | Buffer[] | { content: Buffer, filename: string }[]): FormData {
   const formData = new FormData();
@@ -173,10 +171,10 @@ export function createFormData(files: string[] | Buffer[] | { content: Buffer, f
     } else if (Buffer.isBuffer(file)) {
       // 处理Buffer类型
       const fileName = 'file.bin';
-      formData.append('file', file, fileName);
+      formData.append('file', new Blob([file]), fileName);
     } else if (file && 'content' in file && 'filename' in file) {
       // 处理对象类型
-      formData.append('file', file.content, file.filename);
+      formData.append('file', new Blob([file.content]), file.filename);
     }
   }
   

@@ -1,6 +1,6 @@
 {
   "name": "@qzsy/ragflow-sdk",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "SDK for interacting with RagFlow API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,9 +26,8 @@
   "author": "huanghuabin",
   "license": "MIT",
   "dependencies": {
-    "@types/form-data": "^2.2.1",
     "axios": "^1.8.4",
-    "form-data": "^4.0.2"
+    "formdata-node": "^6.0.3"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
