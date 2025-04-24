@@ -111,9 +111,22 @@ export default function DocumentsPage() {
           return newProgress >= 100 ? 100 : newProgress;
         });
       }, 300);
+
+      // 读取文件内容
+      const fileContent = await selectedFile.arrayBuffer();
+      
+      // 创建Blob对象并转换为Buffer
+      const buffer = Buffer.from(fileContent);
+      
+      // 按照API要求的格式包装文件
+      const fileObject = {
+        content: buffer,
+        filename: selectedFile.name
+      };
       
       // 上传文件
-      const result = await client.documents.upload(datasetId, selectedFile as any);
+      const result = await client.documents.upload(datasetId, fileObject);
+      
       clearInterval(progressInterval);
       setUploadProgress(100);
       

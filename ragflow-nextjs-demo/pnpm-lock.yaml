@@ -9,44 +9,44 @@ importers:
   .:
     dependencies:
       '@qzsy/ragflow-sdk':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.5.0
+        version: 0.5.0
       next:
         specifier: 15.3.1
         version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
     devDependencies:
       '@eslint/eslintrc':
-        specifier: ^3
+        specifier: ^3.3.1
         version: 3.3.1
       '@tailwindcss/postcss':
-        specifier: ^4
+        specifier: ^4.1.4
         version: 4.1.4
       '@types/node':
-        specifier: ^20
+        specifier: ^20.17.30
         version: 20.17.30
       '@types/react':
-        specifier: ^19
+        specifier: ^19.1.2
         version: 19.1.2
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.1.2
         version: 19.1.2(@types/react@19.1.2)
       eslint:
-        specifier: ^9
+        specifier: ^9.25.1
         version: 9.25.1(jiti@2.4.2)
       eslint-config-next:
         specifier: 15.3.1
         version: 15.3.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
       tailwindcss:
-        specifier: ^4
+        specifier: ^4.1.4
         version: 4.1.4
       typescript:
-        specifier: ^5
+        specifier: ^5.8.3
         version: 5.8.3
 
 packages:
@@ -305,8 +305,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@qzsy/ragflow-sdk@0.4.0':
-    resolution: {integrity: sha512-M2inxONFftZ/d7Lt5R7nz2lqwkE4LB3YHcBEBel8aDUyGdoWKpE8AfD59fMo5fTvWyrfDpBvrXAiBZm1j0cM9w==}
+  '@qzsy/ragflow-sdk@0.5.0':
+    resolution: {integrity: sha512-Nd5GAKrJqRMSyqn+vA8Yq8uygwsUhN/BFFEla66vcVCJ7FmEtoMz14coDGFHHjM46ncQm7igS6fbIjsP/lgGXQ==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -413,10 +413,6 @@ packages:
 
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
-
-  '@types/form-data@2.5.2':
-    resolution: {integrity: sha512-tfmcyHn1Pp9YHAO5r40+UuZUPAZbUEgqTel3EuEKpmF9hPkXgR4l41853raliXnb4gwyPNoQOfvgGGlHN5WSog==}
-    deprecated: This is a stub types definition. form-data provides its own type definitions, so you do not need this installed.
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -1000,6 +996,10 @@ packages:
   form-data@4.0.2:
     resolution: {integrity: sha512-hGfm/slu0ZabnNt4oaRZ6uREyfCj6P4fT/n6A1rGV+Z0VdGXjfOhVUpkn6qVQONHGIFwmveGXyDs75+nr6FM8w==}
     engines: {node: '>= 6'}
+
+  formdata-node@6.0.3:
+    resolution: {integrity: sha512-8e1++BCiTzUno9v5IZ2J6bv4RU+3UKDmqWUQD0MIMVCd9AdhWkO1gw57oo1mNEX1dMq2EGI+FbWz4B92pscSQg==}
+    engines: {node: '>= 18'}
 
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
@@ -1967,11 +1967,10 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@qzsy/ragflow-sdk@0.4.0':
+  '@qzsy/ragflow-sdk@0.5.0':
     dependencies:
-      '@types/form-data': 2.5.2
       axios: 1.8.4
-      form-data: 4.0.2
+      formdata-node: 6.0.3
     transitivePeerDependencies:
       - debug
 
@@ -2057,10 +2056,6 @@ snapshots:
     optional: true
 
   '@types/estree@1.0.7': {}
-
-  '@types/form-data@2.5.2':
-    dependencies:
-      form-data: 4.0.2
 
   '@types/json-schema@7.0.15': {}
 
@@ -2817,6 +2812,8 @@ snapshots:
       combined-stream: 1.0.8
       es-set-tostringtag: 2.1.0
       mime-types: 2.1.35
+
+  formdata-node@6.0.3: {}
 
   function-bind@1.1.2: {}
 
