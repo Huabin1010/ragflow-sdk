@@ -1,0 +1,48 @@
+{
+  "name": "@qzsy/ragflow-sdk",
+  "version": "0.4.0",
+  "description": "SDK for interacting with RagFlow API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:real": "ts-node tests/client.real.ts",
+    "test:datasets": "ts-node tests/client.real.ts -- --tests=datasets",
+    "test:upload": "ts-node tests/client.real.ts -- --tests=documentUpload",
+    "test:stream": "ts-node tests/client.real.ts -- --tests=streamResponse",
+    "test:assistants": "ts-node tests/client.real.ts -- --tests=chatAssistants",
+    "test:agents": "ts-node tests/client.real.ts -- --tests=agents",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "ragflow",
+    "rag",
+    "ai",
+    "embeddings",
+    "sdk"
+  ],
+  "author": "huanghuabin",
+  "license": "MIT",
+  "dependencies": {
+    "@types/form-data": "^2.2.1",
+    "axios": "^1.8.4",
+    "form-data": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.17.30",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
